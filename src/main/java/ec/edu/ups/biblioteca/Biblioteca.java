@@ -362,6 +362,8 @@ public class Biblioteca {
                                     }
                                 }
                                 break;
+                            case 3:
+                                System.out.println("Volviendo...:)");
                         }
 
                     } while (opcion4 != 3);
