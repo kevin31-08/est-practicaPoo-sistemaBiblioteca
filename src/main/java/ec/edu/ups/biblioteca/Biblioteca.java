@@ -25,9 +25,9 @@ public class Biblioteca {
         do {
 
             System.out.println("\nINICIANDO EL SISTEMA DE BIBLIOTECA\n");
-            System.out.println("1. Autor: ");
-            System.out.println("2. Libro: ");
-            System.out.println("3. Bibliotecario: ");
+            System.out.println("1. Autor ");
+            System.out.println("2. Libro ");
+            System.out.println("3. Bibliotecario ");
             System.out.println("4. Usuario ");
             System.out.println("5. Devolucion ");
             System.out.println("6. Salir ");
@@ -250,6 +250,7 @@ public class Biblioteca {
                         System.out.println("Menu Usuario.");
                         System.out.println("1. Ingresar Usuario.");
                         System.out.println("2. Solicitar Prestamo.");
+                        System.out.println("3. Volver. ");
 
                         System.out.print("Selecione una opcion. ");
                         opcion4 = entrada.nextInt();
@@ -363,7 +364,8 @@ public class Biblioteca {
                                 break;
                         }
 
-                    } while (opcion4 != 2);
+                    } while (opcion4 != 3);
+                    
 
                 }
                 break;
