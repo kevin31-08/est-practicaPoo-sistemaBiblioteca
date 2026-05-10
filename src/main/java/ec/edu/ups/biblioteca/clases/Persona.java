@@ -75,7 +75,10 @@ public class Persona {
         System.out.println("Telefono: " + telefono );
         System.out.println("Fecha de nacimiento: " + fechaNacimiento);
     }
-    
+    @Override
+    public String toString() {
+        return "\nPersona con " + "cedula: " + cedula + "\nNombre: " + nombre + "\nApellido: " + apellido + "\nTelefono: " + telefono + "\nFechaNacimiento: " + fechaNacimiento ;
+    }
     
     
     

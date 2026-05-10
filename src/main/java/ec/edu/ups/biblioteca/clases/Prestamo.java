@@ -19,6 +19,8 @@ public class Prestamo {
     
     private Bibliotecario bibliotecario;
     private Usuario usuario;
+    
+    // aqui se hace la asigno asignacion entre libro y prestamo 
     private  List<Libro> libros;
 
     public Prestamo() {
@@ -82,9 +84,9 @@ public class Prestamo {
     }
     
     // lo mismo si agregamos una condicion para no salga error en el programa pq al utilizar autor si este es nulo va a salir error 
-    public String crearPrestamo(){
+    public String crearPrestamo(List<Libro> libros){
         
-        if (usuario != null){
+        if (usuario != null && libros != null){
             return "Prestamo creado correctamente para: " + usuario.getNombre();
         }
         return "Prestamo creado, pero sin usuario asignado";

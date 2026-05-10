@@ -4,9 +4,11 @@
  */
 package ec.edu.ups.biblioteca.clases;
 
+
+
 /**
  *
- * @author katherine
+ * @author kevin
  */
 public class Libro {
 
@@ -14,18 +16,21 @@ public class Libro {
     private String titulo;
     private String editorial;
     private String anioPublicacion;
-
+    
+    private boolean disponible;
     private Autor autor;
 
-    public Libro() {
+    public Libro(String bn, String titulo1, String editorial1, String anioPublicacion1) {
     }
 
-    public Libro(String isbn, String titulo, String editorial, String anioPublicacion, Autor autor) {
+    public Libro(String isbn, String titulo, String editorial, String anioPublicacion, boolean disponible, Autor autor) {
         this.isbn = isbn;
         this.titulo = titulo;
         this.editorial = editorial;
         this.anioPublicacion = anioPublicacion;
         this.autor = autor;
+        
+        this.disponible = true;
     }
 
     public String getIsbn() {
@@ -60,6 +65,14 @@ public class Libro {
         this.anioPublicacion = anioPublicacion;
     }
 
+    public boolean isDisponible() {
+        return disponible;
+    }
+
+    public void setDisponible(boolean disponible) {
+        this.disponible = disponible;
+    }
+
     public Autor getAutor() {
         return autor;
     }
@@ -67,21 +80,23 @@ public class Libro {
     public void setAutor(Autor autor) {
         this.autor = autor;
     }
-
-    public boolean verificarDisponibilidad() {
-        return true;
+    public boolean estaDisponible(){
+        return disponible;
+    }
+    
+    public void noEstaDisponible(boolean disponible){
+        this.disponible = disponible;
     }
 
-    public void mostarInformacion() {
-        System.out.println("ISBN: " + isbn);
-        System.out.println("Titulo: " + titulo);
-        System.out.println("Editorial: " + editorial);
-        System.out.println("Año de publicacion: " + anioPublicacion);
-        // Muestra el autor : como tenemos un atributo autor en esta clase, esto significa que puede tener un objeto Autor o puede ser nulo , si este es null habra un error en el programa porque no puedes utilizar algp que no existe.
-        if (autor != null) {
-            System.out.println("Autor: " + autor.getNombre() + autor.getApellido());
-        }
-
+    @Override
+    public String toString() {
+        return "Libro con " + "ISBN: " + isbn + "\ntitulo: " + titulo + "\neditorial: " + editorial + "\nanioPublicacion: " + anioPublicacion + "\nautor: " + autor + "\n";
     }
+    
+    
 
+   
+   
+        
+    
 }

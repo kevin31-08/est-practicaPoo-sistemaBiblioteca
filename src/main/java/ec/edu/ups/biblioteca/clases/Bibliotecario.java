@@ -8,20 +8,15 @@ import java.util.Date;
 
 /**
  *
- * @author katherine
+ * @author kevin
  */
-class Bibliotecario extends Persona{
-    private String codigo ;
+public class Bibliotecario extends Persona {
+
+    private String codigo;
     private String turno;
     private String cargo;
 
-    public Bibliotecario() {
-    }
-
-    public Bibliotecario(String codigo, String turno, String cargo) {
-        this.codigo = codigo;
-        this.turno = turno;
-        this.cargo = cargo;
+    public Bibliotecario(String cedula, String nombre, String apellido, String telefono, Date fNacimiento, String codigo1, String turno1, String cargo1) {
     }
 
     public Bibliotecario(String codigo, String turno, String cargo, String cedula, String nombre, String apellido, String telefono, Date fechaNacimiento) {
@@ -54,14 +49,21 @@ class Bibliotecario extends Persona{
     public void setCargo(String cargo) {
         this.cargo = cargo;
     }
-    
-    public void registrarPrestamo(Libro libro , Prestamo prestamo){
+
+    @Override
+    public String toString() {
+        String resultado = super.toString();
+        resultado += "\nCodigo: " + codigo + "\nTurno: " + turno + "\nCargo: " + cargo + "\n";
+        return resultado;
+    }
+
+    public void registrarDevolucion(Prestamo prestamo) {
+    if (prestamo != null) {
         prestamo.setFechaDevolucion(new Date());
-        System.out.println("Devolucion registrada del libro: " + libro.getTitulo());
-       
+        System.out.println("Devolucion registrada por: " + codigo);
+    } else {
+        System.out.println("Prestamo no valido");
     }
-    public void registrarDevolucion(Libro libro){
-        System.out.println("Devolucion registrada del libro: " + libro.getTitulo());
-    }
-    
+}
+
 }

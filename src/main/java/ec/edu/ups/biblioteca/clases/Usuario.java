@@ -21,7 +21,7 @@ public class Usuario extends Persona  {
     private List<Prestamo> prestamos;
     
 
-    public Usuario() {
+    public Usuario(String cedula, String nombre, String apellido, String telefono, Date fNacimiento, String correo, String direccion1) {
         this.prestamos = new ArrayList<>();
     }
 
@@ -46,16 +46,7 @@ public class Usuario extends Persona  {
 
     public void setDireccion(String direccion) {
         this.direccion = direccion;
-    }
-    public void socilitarPrestamo(){
-        System.out.println("Prestamo salicitado");
-        
-    }
-    public void devolucionLibro(){
-        System.out.println("Libro devuelto");
-        
-    }
-    
+    }   
     // como tenemos la composiscion aqui se agrega el prestamo por eso este metodo
     
     
@@ -68,6 +59,12 @@ public class Usuario extends Persona  {
     }
     public List<Prestamo> getprestamos(){
         return prestamos;
+    }
+    @Override
+    public String toString() {
+        String resultado = super.toString();
+        resultado += "\nCorreoElectronico: " + correoElectronico + "\nDireccion: " + direccion + "\n";
+        return resultado;
     }
 
     
