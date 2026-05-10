@@ -364,6 +364,7 @@ public class Biblioteca {
                                 break;
                             case 3:
                                 System.out.println("Volviendo...:)");
+                                break;
                         }
 
                     } while (opcion4 != 3);
