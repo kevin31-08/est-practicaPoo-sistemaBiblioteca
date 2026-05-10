@@ -1,25 +1,24 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package ec.edu.ups.biblioteca.clases;
 
 import java.util.Date;
 
 /**
  *
- * @author kevin
+ * @author kevin and Edwin 
  */
+
 public class Bibliotecario extends Persona {
 
     private String codigo;
     private String turno;
     private String cargo;
 
-    public Bibliotecario(String cedula, String nombre, String apellido, String telefono, Date fNacimiento, String codigo1, String turno1, String cargo1) {
+    public Bibliotecario() {
+        
     }
 
-    public Bibliotecario(String codigo, String turno, String cargo, String cedula, String nombre, String apellido, String telefono, Date fechaNacimiento) {
+    public Bibliotecario(String cedula, String nombre, String apellido, String telefono, Date fechaNacimiento, String codigo, String turno, String cargo) {
         super(cedula, nombre, apellido, telefono, fechaNacimiento);
         this.codigo = codigo;
         this.turno = turno;

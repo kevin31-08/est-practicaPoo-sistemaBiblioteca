@@ -1,15 +1,11 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package ec.edu.ups.biblioteca.clases;
-
-
 
 /**
  *
- * @author kevin
+ * @author kevin and Edwin
  */
+
 public class Libro {
 
     private String isbn;
@@ -20,7 +16,14 @@ public class Libro {
     private boolean disponible;
     private Autor autor;
 
-    public Libro(String bn, String titulo1, String editorial1, String anioPublicacion1) {
+    public Libro() {
+    }
+
+    public Libro(String isbn, String titulo, String editorial, String anioPublicacion) {
+        this.isbn = isbn;
+        this.titulo = titulo;
+        this.editorial = editorial;
+        this.anioPublicacion = anioPublicacion;
     }
 
     public Libro(String isbn, String titulo, String editorial, String anioPublicacion, boolean disponible, Autor autor) {
@@ -28,6 +31,7 @@ public class Libro {
         this.titulo = titulo;
         this.editorial = editorial;
         this.anioPublicacion = anioPublicacion;
+        this.disponible = disponible;
         this.autor = autor;
         
         this.disponible = true;
@@ -91,12 +95,5 @@ public class Libro {
     @Override
     public String toString() {
         return "Libro con " + "ISBN: " + isbn + "\ntitulo: " + titulo + "\neditorial: " + editorial + "\nanioPublicacion: " + anioPublicacion + "\nautor: " + autor + "\n";
-    }
-    
-    
-
-   
-   
-        
-    
+    } 
 }

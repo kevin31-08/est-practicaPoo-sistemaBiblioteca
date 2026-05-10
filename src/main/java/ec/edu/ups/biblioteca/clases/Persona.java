@@ -1,15 +1,13 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package ec.edu.ups.biblioteca.clases;
 
 import java.util.Date;
 
 /**
  *
- * @author katherine
+ * @author kevin and Edwin
  */
+
 public class Persona {
     private String cedula;
     private String nombre;
@@ -78,9 +76,5 @@ public class Persona {
     @Override
     public String toString() {
         return "\nPersona con " + "cedula: " + cedula + "\nNombre: " + nombre + "\nApellido: " + apellido + "\nTelefono: " + telefono + "\nFechaNacimiento: " + fechaNacimiento ;
-    }
-    
-    
-    
-    
+    }  
 }

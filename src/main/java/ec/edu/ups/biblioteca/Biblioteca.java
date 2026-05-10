@@ -32,7 +32,7 @@ public class Biblioteca {
             System.out.println("5. Devolucion ");
             System.out.println("6. Salir ");
 
-            System.out.print("\nElija una opcion del 1 al 5: ");
+            System.out.print("\nElija una opcion del 1 al 6: ");
             opcion = entrada.nextInt();
             entrada.nextLine();
 
@@ -40,22 +40,20 @@ public class Biblioteca {
 
                 case 1: {
 
-                    int opcion1;
-
                     do {
 
-                        System.out.println(" MENU AUTOR ");
+                        System.out.println("\nMENU AUTOR\n");
                         System.out.println("1. Ingresar Autor. ");
-                        System.out.println("2. Infromcaion del autor.");
+                        System.out.println("2. Mostrar Infromacion del autor.");
                         System.out.println("3. Volver");
 
                         System.out.print("Selecione una opcion. ");
-                        opcion1 = entrada.nextInt();
+                        opcion = entrada.nextInt();
                         entrada.nextLine();
 
-                        switch (opcion1) {
+                        switch (opcion) {
 
-                            case 1:
+                            case 1: {
                                 System.out.println("\nREGISTRAR AUTOR \n");
 
                                 System.out.print("Ingrese el numero de cedula: ");
@@ -97,44 +95,48 @@ public class Biblioteca {
 
                                 System.out.println("Se guardo su autor :) ");
                                 break;
+                            }
 
-                            case 2:
+                            case 2: {
                                 if (!autores.isEmpty()) {
-                                    System.out.println("Mostrando Informacion. :) ");
-                                    System.out.println(autores.get(0).toString());
+                                    System.out.println("\nTUS AUTORES REGISTRADOS");
+                                    for (Autor autor : autores) {
+                                        System.out.println(autor);
+                                    }
                                 } else {
-                                    System.out.println("No existen autores registrados. ");
+                                    System.out.println("\nNo existen autores registrados. ");
                                 }
                                 break;
+                            }
 
-                            case 3:
-                                System.out.println("Volviendo...:)");
+                            case 3: {
+                                System.out.println("\nVolviendo...:)");
                                 break;
+                            }
+
                         }
 
-                    } while (opcion1 != 3);
+                    } while (opcion != 3);
 
                 }
                 break;
 
                 case 2: {
 
-                    int opcion2;
-
                     do {
 
-                        System.out.println("MENU LIBRO");
+                        System.out.println("\nMENU LIBRO\n");
                         System.out.println("1. Ingresar libro.");
                         System.out.println("2. Mostrar Infromacion del libro.");
                         System.out.println("3. Volver.");
 
                         System.out.print("Selecione una opcion: ");
-                        opcion2 = entrada.nextInt();
+                        opcion = entrada.nextInt();
                         entrada.nextLine();
 
-                        switch (opcion2) {
+                        switch (opcion) {
 
-                            case 1:
+                            case 1: {
                                 System.out.println("\nREGISTRAR LIBRO \n");
 
                                 if (!autores.isEmpty()) {
@@ -181,84 +183,129 @@ public class Biblioteca {
                                     System.out.println("No existen autores registrados");
                                 }
                                 break;
+                            }
 
-                            case 2:
+                            case 2: {
                                 if (!libros.isEmpty()) {
-                                    System.out.println("Indormacion del libro... :)");
-                                    System.out.println(libros.get(0).toString());
+                                    System.out.println("\nTUS LIBROS REGISTRADOS");
+                                    for (Libro libro : libros) {
+                                        System.out.println(libro);
+                                    }
                                 } else {
-                                    System.out.println("No existen libros registrados.");
+                                    System.out.println("\nNo existen libros registrados.");
                                 }
                                 break;
+                            }
 
-                            case 3:
-                                System.out.println("Volviendo...");
+                            case 3: {
+                                System.out.println("\nVolviendo...");
                                 break;
+                            }
                         }
 
-                    } while (opcion2 != 3);
+                    } while (opcion != 3);
 
                 }
                 break;
 
                 case 3: {
 
-                    int opcion3;
-
                     do {
 
-                        System.out.println("Menu Bibliotecario.");
+                        System.out.println("\nMENU BIBLIOTECARIO.\n");
                         System.out.println("1. Ingresar Bibliotecario.");
                         System.out.println("2. Mostrar Informacion");
                         System.out.println("3. Volver.");
 
                         System.out.print("Seleccione una opcion: ");
-                        opcion3 = entrada.nextInt();
+                        opcion = entrada.nextInt();
                         entrada.nextLine();
 
-                        switch (opcion3) {
+                        switch (opcion) {
 
-                            case 1:
+                            case 1: {
                                 System.out.println("\nREGISTRAR BIBLIOTECARIO \n");
-                                break;
 
-                            case 2:
+                                System.out.print("Ingrese el numero de cedula: ");
+                                String cedula = entrada.nextLine();
+
+                                System.out.print("Ingrese el nombre: ");
+                                String nombre = entrada.nextLine();
+
+                                System.out.print("Ingrese el apellido: ");
+                                String apellido = entrada.nextLine();
+
+                                System.out.print("Ingrese el numero de telefono: ");
+                                String telefono = entrada.nextLine();
+
+                                System.out.print("Ingrese el dia de nacimiento: ");
+                                int dia = entrada.nextInt();
+
+                                System.out.print("Ingrese el mes de nacimiento: ");
+                                int mes = entrada.nextInt();
+
+                                System.out.print("Ingrese el año de nacimiento: ");
+                                int anio = entrada.nextInt();
+                                entrada.nextLine();
+
+                                java.util.Date fNacimiento = new java.util.Date(anio - 1900, mes - 1, dia);
+
+                                System.out.print("Ingrese el codigo del empleado: ");
+                                String codigo = entrada.nextLine();
+
+                                System.out.print("Ingrese el turno del empleado: ");
+                                String turno = entrada.nextLine();
+
+                                System.out.print("Ingrese cargo del empleado: ");
+                                String cargo = entrada.nextLine();
+
+                                Bibliotecario bibliotecario = new Bibliotecario(cedula, nombre, apellido, telefono, fNacimiento, codigo, turno, cargo);
+                                bibliotecarios.add(bibliotecario);
+
+                                System.out.println("Se guardo su bibliotecario :) ");
+                                break;
+                            }
+
+                            case 2: {
                                 if (!bibliotecarios.isEmpty()) {
-                                    System.out.println("Informacion del bibliotecario. ");
-                                    System.out.println(bibliotecarios.get(0).toString());
+                                    System.out.println("\nTUS BIBLIOTECARIOS REGISTRADOS");
+                                    for (Bibliotecario bibliotecario : bibliotecarios) {
+                                        System.out.println(bibliotecario);
+                                    }
                                 } else {
-                                    System.out.println("No existe bibliotecario.");
+                                    System.out.println("\nNo existe bibliotecario.");
                                 }
                                 break;
+                            }
 
-                            case 3:
-                                System.out.println("Volviendo...");
+                            case 3: {
+                                System.out.println("\nVolviendo...");
                                 break;
+                            }
                         }
 
-                    } while (opcion3 != 3);
+                    } while (opcion != 3);
 
                 }
                 break;
 
                 case 4: {
 
-                    int opcion4;
-
                     do {
 
-                        System.out.println("Menu Usuario.");
+                        System.out.println("\nMENU USUARIO.\n");
                         System.out.println("1. Ingresar Usuario.");
                         System.out.println("2. Solicitar Prestamo.");
-                        System.out.println("3. Volver. ");
+                        System.out.println("3. Mostrar Infromacion del usuario");
+                        System.out.println("4. Volver. ");
 
                         System.out.print("Selecione una opcion. ");
-                        opcion4 = entrada.nextInt();
+                        opcion = entrada.nextInt();
                         entrada.nextLine();
 
-                        switch (opcion4) {
+                        switch (opcion) {
 
-                            case 1:
+                            case 1: {
                                 System.out.println("\nREGISTRAR USUARIO \n");
 
                                 System.out.print("Ingrese el numero de cedula: ");
@@ -304,71 +351,94 @@ public class Biblioteca {
 
                                 usuarios.add(usuario);
 
-                                System.out.println("Usuario registrado correctamente.");
+                                System.out.println("\nUsuario registrado correctamente.");
                                 break;
+                            }
 
-                            case 2:
+                            case 2: {
                                 System.out.println("\n Solicitar Prestamo \n");
 
-                                if (!usuarios.isEmpty()) {
+                                System.out.println("\n Solicitar Prestamo \n");
 
-                                    System.out.println("Ingrese cedula del usuario: ");
-                                    String cusuario = entrada.nextLine();
+                                System.out.print("Ingrese cedula del usuario: ");
+                                String cusuario = entrada.nextLine();
 
-                                    System.out.println("cedula bibliotecario: ");
-                                    String cbibliotecario = entrada.nextLine();
+                                System.out.print("Ingrese cedula bibliotecario: ");
+                                String cbibliotecario = entrada.nextLine();
 
-                                    System.out.println("ISBN del libro: ");
-                                    String isbn = entrada.nextLine();
+                                System.out.print("ISBN del libro: ");
+                                String isbn = entrada.nextLine();
 
-                                    Usuario usuarioEncontrado = null;
-                                    Bibliotecario bibliotecarioEncontrado = null;
-                                    Libro libroEncontrado = null;
+                                Usuario usuarioEncontrado = null;
+                                Bibliotecario bibliotecarioEncontrado = null;
+                                Libro libroEncontrado = null;
 
-                                    for (Usuario usua : usuarios) {
-                                        if (usua.getCedula().equals(cusuario)) {
-                                            usuarioEncontrado = usua;
-                                            break;
-                                        }
-                                    }
-
-                                    for (Bibliotecario bibli : bibliotecarios) {
-                                        if (bibli.getCedula().equals(cbibliotecario)) {
-                                            bibliotecarioEncontrado = bibli;
-                                            break;
-                                        }
-                                    }
-
-                                    for (Libro lib : libros) {
-                                        if (lib.getIsbn().equals(isbn)) {
-                                            libroEncontrado = lib;
-                                            break;
-                                        }
-                                    }
-
-                                    if (usuarioEncontrado != null
-                                            && bibliotecarioEncontrado != null
-                                            && libroEncontrado != null) {
-
-                                        ArrayList<Libro> listaLibros = new ArrayList<>();
-                                        listaLibros.add(libroEncontrado);
-
-                                        usuarioEncontrado.crearPrestamo(
-                                                new Date(),
-                                                new Date(),
-                                                bibliotecarioEncontrado,
-                                                listaLibros
-                                        );
+// BUSCAR USUARIO
+                                for (Usuario usua : usuarios) {
+                                    if (usua.getCedula().equals(cusuario)) {
+                                        usuarioEncontrado = usua;
+                                        break;
                                     }
                                 }
+
+// BUSCAR BIBLIOTECARIO
+                                for (Bibliotecario bibli : bibliotecarios) {
+                                    if (bibli.getCedula().equals(cbibliotecario)) {
+                                        bibliotecarioEncontrado = bibli;
+                                        break;
+                                    }
+                                }
+
+// BUSCAR LIBRO
+                                for (Libro lib : libros) {
+                                    if (lib.getIsbn().equals(isbn)) {
+                                        libroEncontrado = lib;
+                                        break;
+                                    }
+                                }
+
+// VALIDACIÓN DETALLADA
+                                if (usuarioEncontrado == null) {
+                                    System.out.println("Usuario no encontrado");
+                                }
+
+                                if (bibliotecarioEncontrado == null) {
+                                    System.out.println("Bibliotecario no encontrado");
+                                }
+
+                                if (libroEncontrado == null) {
+                                    System.out.println("Libro no encontrado");
+                                }
+
+// CREAR PRÉSTAMO SOLO SI TODO EXISTE
+                                if (usuarioEncontrado != null
+                                        && bibliotecarioEncontrado != null
+                                        && libroEncontrado != null) {
+
+                                    ArrayList<Libro> listaLibros = new ArrayList<>();
+                                    listaLibros.add(libroEncontrado);
+
+                                    Date fechaSalida = new Date();
+                                    Date fechaLimite = new Date(fechaSalida.getTime() + (7L * 24 * 60 * 60 * 1000));
+
+                                    Prestamo prestamo = usuarioEncontrado.crearPrestamo(
+                                            fechaSalida,
+                                            fechaLimite,
+                                            bibliotecarioEncontrado,
+                                            listaLibros
+                                    );
+
+                                    System.out.println("Préstamo creado correctamente");
+                                }
+                            }
+
+                            case 4: {
+                                System.out.println("\nVolviendo...:)");
                                 break;
-                            case 3:
-                                System.out.println("Volviendo...:)");
-                                break;
+                            }
                         }
 
-                    } while (opcion4 != 3);
-                    
+                    } while (opcion != 4);
 
                 }
                 break;
@@ -390,7 +460,7 @@ public class Biblioteca {
                     Bibliotecario bibliotecarioEncontrado = null;
                     Prestamo prestamoEncontrado = null;
 
-                    // buscar usuario
+// buscar usuario
                     for (Usuario u : usuarios) {
                         if (u.getCedula().equals(cedulaUsuario)) {
                             usuarioEncontrado = u;
@@ -398,7 +468,7 @@ public class Biblioteca {
                         }
                     }
 
-                    // buscar bibliotecario
+// buscar bibliotecario
                     for (Bibliotecario b : bibliotecarios) {
                         if (b.getCodigo().equals(codigoBibliotecario)) {
                             bibliotecarioEncontrado = b;
@@ -406,7 +476,7 @@ public class Biblioteca {
                         }
                     }
 
-                    // buscar prestamo dentro del usuario (COMPOSICION)
+// buscar prestamo dentro del usuario (COMPOSICIÓN)
                     if (usuarioEncontrado != null) {
                         for (Prestamo p : usuarioEncontrado.getprestamos()) {
                             for (Libro l : p.getLibros()) {
@@ -421,24 +491,20 @@ public class Biblioteca {
                         }
                     }
 
-                    // llama al metodo 
+// validar y ejecutar devolución
                     if (bibliotecarioEncontrado != null && prestamoEncontrado != null) {
 
                         bibliotecarioEncontrado.registrarDevolucion(prestamoEncontrado);
 
-                        System.out.println("Devolucion registrada correctamente");
+                        System.out.println("\nDevolucion registrada correctamente");
 
                     } else {
-                        System.out.println("No se encontro usuario, bibliotecario o prestamo");
+                        System.out.println("\nNo se encontro usuario, bibliotecario o prestamo");
                     }
 
                     break;
                 }
 
-                case 6:
-                    System.out.println("Usted a salido del sistema :) ");
-                default:
-                    System.out.println("Error datos invalidos");
             }
 
         } while (opcion != 6);

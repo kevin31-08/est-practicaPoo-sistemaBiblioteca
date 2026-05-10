@@ -1,16 +1,15 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package ec.edu.ups.biblioteca.clases;
  
 import java.util.Date;
 import java.util.List;
 
+
 /**
  *
- * @author katherine
+ * @author kevin and Edwin
  */
+
 public class Prestamo {
     private Date fechaSalida;
     private Date fechaDevolucion;
@@ -83,15 +82,5 @@ public class Prestamo {
         this.libros = libros;
     }
     
-    // lo mismo si agregamos una condicion para no salga error en el programa pq al utilizar autor si este es nulo va a salir error 
-    public String crearPrestamo(List<Libro> libros){
-        
-        if (usuario != null && libros != null){
-            return "Prestamo creado correctamente para: " + usuario.getNombre();
-        }
-        return "Prestamo creado, pero sin usuario asignado";
-    }
-    
-
-    
+ 
 }
